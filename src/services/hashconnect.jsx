@@ -1,8 +1,7 @@
 import { AccountId, LedgerId, Transaction } from "@hashgraph/sdk";
 import { HashConnect } from "hashconnect";
-import { HASHCONNECT_PROJECT_ID } from "../constants";
+import { HASHCONNECT_PROJECT_ID, HEDERA_NETWORK } from "../constants";
 
-const env = "testnet";
 const appMetadata = {
     name: "Hedera Donation",
     description: "Donation using HBar, USDC",
@@ -11,7 +10,7 @@ const appMetadata = {
 };
 
 export const hc = new HashConnect(
-    LedgerId.fromString(env),
+    LedgerId.fromString(HEDERA_NETWORK),
     HASHCONNECT_PROJECT_ID,
     appMetadata,
     true
